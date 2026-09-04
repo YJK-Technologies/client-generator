@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Client Info Generator - YJK Technologies</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 20px;
+        background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+        color: #333;
+        text-align: center; 
+      }
+
+      h2 {
+        color: #1976d2;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      #companyTag {
+        font-size: 13px;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 20px;
+      }
+
+      #logo {
+        width: 70px;
+        /* margin-bottom: 10px; */
+      }
+
+      #progressWrap {
+        margin-top: 20px;
+      }
+
+      #progressBar {
+        width: 100%;
+        height: 25px;
+        background: #eee;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      #progressFill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #4caf50, #81c784);
+        transition: width 0.4s ease;
+      }
+
+      .status {
+        margin-top: 12px;
+        font-weight: 500;
+      }
+
+      button {
+        padding: 10px 16px;
+        font-size: 14px;
+        margin-top: 16px;
+        background: #1976d2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background: #1565c0;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #doneText {
+        margin-top: 20px;
+        font-weight: 600;
+        color: #2e7d32;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="logo" alt="YJK Technologies Logo" />
+
+    <h2>Client Info Notepad Generator</h2>
+    <div id="companyTag">Powered by <span style="color:#1976d2;">YJK Technologies</span></div> <!-- ✅ company name added -->
+
+    <p>Click the button below to generate a client information file. Once downloaded, share the file with the support team for assistance.</p>
+
+    <div>
+      <button id="btnGenerate">Start Generation</button>
+    </div>
+
+    <div id="progressWrap" class="hidden">
+      <div id="progressBar"><div id="progressFill"></div></div>
+      <div class="status" id="statusText">Waiting...</div>
+    </div>
+
+    <div class="actions hidden" id="afterActions">
+      <p id="doneText">File saved at: <span id="filePath"></span></p>
+      <p>File downloaded successfully. Please share this file with support team.</p>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
